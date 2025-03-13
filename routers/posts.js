@@ -17,20 +17,39 @@ router.get('/', (req,res) =>{
 
     // res.send("All posts here");
 
-    // bonus 
+    // bonus 1 🔗
 
     res.json(blogPosts);
 
 })
 
 // show 
-router.get('/:id', (req,res) =>{
+// router.get('/:id', (req,res) =>{
 
-    const postsId = req.params.id
-    res.send(`this is the post: ${postsId}`);
+//     const postsId = req.params.id
+//     res.send(`this is the post: ${postsId}`);
 
-})
+// })
 
+/* Bonus 2 🔗 */
+
+// show
+
+router.get("/:tags", (req, res) => {
+
+    const tag = req.params.tags
+
+    const singlePost = blogPosts.find((post) => {
+
+        post.tags.includes(tag);
+        if(post) {
+            res.json(post)
+        }
+    })
+    
+});
+
+    
 //store
 
 router.post('/', (req,res) =>{
