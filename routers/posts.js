@@ -1,11 +1,25 @@
 const express = require("express");
 const router = express.Router();
+const blogPosts = require('../posts')
+
+//middleweres 
+
+router.use(express.static('public'));
+
+
+
+//All routes below
+
 
 //index
 
 router.get('/', (req,res) =>{
 
-    res.send("All posts here");
+    // res.send("All posts here");
+
+    // bonus 
+
+    res.json(blogPosts);
 
 })
 
@@ -30,7 +44,7 @@ router.post('/', (req,res) =>{
 router.put('/:id', (req,res) =>{
 
     const postsId = req.params.id
-    res.send(`this is the post: ${postsId}`);
+    res.send(`you're updating the post: ${postsId}`);
 
 })
 
@@ -39,7 +53,7 @@ router.put('/:id', (req,res) =>{
 router.patch('/:id', (req,res) =>{
 
     const postsId = req.params.id
-    res.send(`this is the post: ${postsId}`);
+    res.send(`you're modifying the post: ${postsId}`);
 
 })
 
@@ -48,7 +62,7 @@ router.patch('/:id', (req,res) =>{
 router.delete('/:id', (req,res) =>{
 
     const postsId = req.params.id
-    res.send(`this is the post: ${postsId}`);
+    res.send(`you're deleting the post: ${postsId}`);
 
 })
 
