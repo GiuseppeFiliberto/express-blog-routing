@@ -20,6 +20,6 @@
   "homepage": "https://github.com/GiuseppeFiliberto/express-blog-routing#readme",
   "description": "",
   "dependencies": {
-    "expess": "^0.0.1-security"
+    "express": "^4.21.2"
   }
 }
