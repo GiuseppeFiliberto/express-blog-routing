@@ -1,7 +1,10 @@
 const express = require ('express');
 const app = express();
-const port = 3000;
+const port = 3008;
 const routerPosts = require ('./routers/posts');
+
+//middlewere
+app.use('/api/v1/posts', routerPosts);
 
 //server listening
 app.listen(port, () =>{
@@ -11,7 +14,7 @@ app.listen(port, () =>{
 //main route
 app.get('/', (req,res) =>{
 
-    console.log("welcome to the server");
+    res.send("welcome to the server");
     
 });
 
